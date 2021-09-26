@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{ if request.user.is_authenticated %}
+this is a blog page
+
+{% for i in content %}
+     {{ i }}
+
+{% endfor %}
+{% else %}
+u need to fill login to filll details
+
+{% endif %}
+{% endblock %}

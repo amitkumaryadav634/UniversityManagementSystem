@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    div.ex1{
+    width:800px;
+    margin:auto;
+
+</style>
+<div class="ex1">
+    <br><br><br>
+    <form method="POST" enctype="multipart/form-data">
+        <h3>Sign-Up Form</h3>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    <br>
+</div>
+
+{% endblock %}
+
+

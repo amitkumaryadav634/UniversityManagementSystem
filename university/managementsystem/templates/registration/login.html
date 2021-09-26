@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    div.ex1{
+    width:800px;
+    margin:auto;
+
+</style>
+<div class="ex1">
+    {% if user.authenticated %}
+     <h4>u are already logged in</h4>
+    {% else %}
+    <br>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Login(existing user)</button>
+        <a class="btn btn-primary" href="{% url 'signup' %}" role="button">signup(new user)</a>
+    </form>
+    {% endif %}
+
+</div>
+<script src=""></script>
+
+{% endblock %}

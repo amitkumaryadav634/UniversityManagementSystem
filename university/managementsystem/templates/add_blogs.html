@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{ if request.user.is_authenticated %}
+<div class="container">
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form }}
+    <button type="submit">SUBMIT</button>
+</form>
+
+</div>
+{% else %}
+u need to fill login to filll details
+
+{% endif %}
+{% endblock %}
